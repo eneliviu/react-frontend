@@ -1,8 +1,9 @@
 import React from "react";
+import "./Header.css";
 
 function Header() {
     return (
-        <header className="App-header">
+        <div className="App-header" style={{ backgroundColor: "lightblue", height: "10vh" }}>
             <h1>Welcome to My App</h1>
             <nav>
                 <ul>
@@ -17,7 +18,7 @@ function Header() {
                     </li>
                 </ul>
             </nav>
-        </header>
+        </div>
     );
 }
 
