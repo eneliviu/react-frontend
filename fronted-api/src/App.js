@@ -1,29 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-import Header from "./components/Header";
-
+import React from "react";
+import "./App.css";
+import MapLeaflet from "./components/MapLeaflet";
+import Button from "react-bootstrap/Button";
 
 function App() {
-  return (
-      <div className="App">
-          <Header />
-          <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-              <p>
-                  <h1>Welcome</h1>
-                  Edit <code>src/App.js</code> and save to reload.
-              </p>
-              <a
-                  className="App-link"
-                  href="https://reactjs.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-              >
-                  Learn React
-              </a>
-          </header>
-      </div>
-  );
+    return (
+        <div className="App">
+            <h1>Welcome</h1>
+            <Button variant="primary">Primary</Button>
+            <MapLeaflet />
+        </div>
+    );
 }
 
 export default App;
