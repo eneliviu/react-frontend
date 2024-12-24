@@ -3,7 +3,7 @@ import "./Header.css";
 
 function Header() {
     return (
-        <div className="App-header" style={{ backgroundColor: "lightblue", height: "10vh" }}>
+        <div className="App-header">
             <h1>Welcome to My App</h1>
             <nav>
                 <ul>

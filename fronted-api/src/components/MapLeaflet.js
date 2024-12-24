@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
+import { Container } from "react-bootstrap";
 
 // Fix for default marker icon not showing
 delete L.Icon.Default.prototype._getIconUrl;
@@ -24,24 +25,30 @@ function MapLeaflet() {
     ];
 
     return (
-        <MapContainer
-            ref={mapRef}
-            center={position}
-            zoom={13}
-            style={{ height: "50vh", width: "50%" }}
+        <Container
+            className="d-flex
+                align-items-center
+                justify-content-center"
         >
-            <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            />
-            <MarkerClusterGroup>
-                {markers.map((marker, index) => (
-                    <Marker key={index} position={marker.position}>
-                        <Popup>{marker.popup}</Popup>
-                    </Marker>
-                ))}
-            </MarkerClusterGroup>
-        </MapContainer>
+            <MapContainer
+                ref={mapRef}
+                center={position}
+                zoom={13}
+                style={{ height: "50vh", width: "50%" }}
+            >
+                <TileLayer
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                />
+                <MarkerClusterGroup>
+                    {markers.map((marker, index) => (
+                        <Marker key={index} position={marker.position}>
+                            <Popup>{marker.popup}</Popup>
+                        </Marker>
+                    ))}
+                </MarkerClusterGroup>
+            </MapContainer>
+        </Container>
     );
 }
 
